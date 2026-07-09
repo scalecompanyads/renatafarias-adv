@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Regularização de Imóveis e Usucapião Extrajudicial | Dra. Renata Farias — Vila Velha/ES</title>
+  <meta name="description" content="Seu imóvel está realmente protegido? Obtenha a escritura definitiva diretamente em cartório, sem processo judicial demorado. Advocacia especializada em regularização de imóveis em Vila Velha/ES.">
+
+  <!-- Open Graph — ajustar og:url e og:image para a URL absoluta do domínio ao publicar -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Seu imóvel está realmente protegido? | Dra. Renata Farias">
+  <meta property="og:description" content="Descubra como obter a escritura definitiva do seu imóvel diretamente em cartório, de forma ágil e segura, sem processo judicial.">
+  <meta property="og:image" content="assets/hero-bg.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Paleta extraída da identidade visual */
+      --gold-1: #8C6524;
+      --gold-2: #C9964B;
+      --gold-3: #EDD29A;
+      --gold-grad: linear-gradient(115deg, #8C6524 0%, #C9964B 42%, #EDD29A 100%);
+      --petrol: #46626E;
+      --dark: #161310;
+      --dark-2: #1F1A15;
+      --dark-line: rgba(201, 150, 75, .22);
+      --paper: #F5F2EC;
+      --paper-2: #ECE7DD;
+      --paper-line: #DDD5C6;
+      --ink: #2E2A26;
+      --ink-soft: #5C554C;
+      --cream: #EFE8DB;
+      --cream-soft: #CFC7B9;
+      --radius: 4px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1160px, 100% - 3rem);
+      margin-inline: auto;
+    }
+
+    /* ---------- Tipografia ---------- */
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--petrol);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--gold-2);
+    }
+    .eyebrow--center { justify-content: center; }
+    .eyebrow--center::after {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--gold-2);
+    }
+    .eyebrow--gold { color: var(--gold-2); }
+
+    .section-title {
+      font-size: clamp(2rem, 4.2vw, 3rem);
+      color: var(--ink);
+      max-width: 21ch;
+    }
+    .section-title em {
+      font-style: italic;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--gold-1);
+    }
+
+    .section-lead {
+      font-size: 1.06rem;
+      color: var(--ink-soft);
+      max-width: 62ch;
+    }
+
+    /* ---------- Botões ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 17px 34px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+    }
+    .btn svg { flex-shrink: 0; }
+
+    .btn--gold {
+      background: var(--gold-grad);
+      color: #1B1611;
+      box-shadow: 0 10px 28px rgba(140, 101, 36, .28);
+    }
+    .btn--gold:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 16px 34px rgba(140, 101, 36, .38);
+    }
+
+    .btn--ghost {
+      border: 1px solid var(--gold-2);
+      color: var(--gold-3);
+      background: transparent;
+      padding: 12px 24px;
+    }
+    .btn--ghost:hover { background: rgba(201, 150, 75, .12); }
+
+    /* ---------- Header ---------- */
+    .header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      transition: background .3s ease, box-shadow .3s ease;
+    }
+    .header.is-scrolled {
+      background: rgba(18, 15, 12, .92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--dark-line);
+    }
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .header__logo img { height: 40px; width: auto; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background: var(--dark);
+      overflow: hidden;
+    }
+    .hero__media {
+      position: absolute;
+      inset: 0;
+    }
+    .hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% center;
+    }
+    .hero__media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 13, 10, .96) 0%, rgba(16, 13, 10, .86) 30%, rgba(16, 13, 10, .38) 62%, rgba(16, 13, 10, .30) 100%),
+        linear-gradient(0deg, rgba(16, 13, 10, .55) 0%, rgba(16, 13, 10, 0) 30%);
+    }
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      padding: 150px 0 110px;
+      max-width: 640px;
+    }
+    .hero__content .eyebrow { color: var(--gold-3); }
+    .hero__title {
+      font-size: clamp(2.4rem, 5.4vw, 4rem);
+      color: var(--cream);
+      margin: 26px 0 22px;
+    }
+    .hero__title em {
+      font-style: italic;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--gold-2);
+    }
+    .hero__sub {
+      font-size: 1.08rem;
+      color: var(--cream-soft);
+      max-width: 54ch;
+      margin-bottom: 40px;
+    }
+    .hero__cta-note {
+      margin-top: 18px;
+      font-size: 13px;
+      letter-spacing: .06em;
+      color: rgba(207, 199, 185, .75);
+    }
+
+    /* filete arquitetônico lateral do hero */
+    .hero__rule {
+      position: absolute;
+      left: max(24px, calc((100vw - 1160px) / 2 - 60px));
+      top: 55%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 220px;
+      background: linear-gradient(180deg, transparent, var(--gold-2), transparent);
+      opacity: .55;
+      z-index: 1;
+    }
+
+    /* ---------- Seções (base) ---------- */
+    .section { padding: 110px 0; }
+    .section__head { margin-bottom: 64px; }
+    .section__head .section-title { margin: 24px 0 18px; }
+
+    .section-index {
+      font-family: var(--font-display);
+      font-size: 15px;
+      letter-spacing: .18em;
+      color: var(--gold-1);
+    }
+
+    /* ---------- Diagnóstico (cards) ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .card {
+      position: relative;
+      background: #FBF9F5;
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 42px 38px 38px;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 38px;
+      right: 38px;
+      height: 2px;
+      background: var(--gold-grad);
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #D3C8B2;
+      box-shadow: 0 22px 44px rgba(46, 42, 38, .09);
+    }
+    .card:hover::before { opacity: 1; }
+    .card__num {
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: .2em;
+      color: var(--gold-1);
+      display: block;
+      margin-bottom: 20px;
+    }
+    .card__title {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .card__text { color: var(--ink-soft); font-size: .98rem; }
+
+    /* ---------- Impacto (seção escura) ---------- */
+    .impact {
+      background:
+        repeating-linear-gradient(90deg, rgba(201, 150, 75, .045) 0 1px, transparent 1px 72px),
+        linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+      color: var(--cream-soft);
+      position: relative;
+    }
+    .impact .section-title { color: var(--cream); }
+    .impact .section-lead { color: var(--cream-soft); }
+    .impact .eyebrow { color: var(--gold-3); }
+
+    .impact__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border: 1px solid var(--dark-line);
+    }
+    .impact__item {
+      padding: 46px 44px;
+      border-right: 1px solid var(--dark-line);
+      border-bottom: 1px solid var(--dark-line);
+    }
+    .impact__item:nth-child(2n) { border-right: none; }
+    .impact__item:nth-child(n+3) { border-bottom: none; }
+    .impact__item h3 {
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin: 18px 0 10px;
+    }
+    .impact__item p { font-size: .97rem; }
+    .impact__icon {
+      width: 40px;
+      height: 40px;
+      color: var(--gold-2);
+    }
+
+    .impact__quote {
+      margin: 80px auto 48px;
+      text-align: center;
+      max-width: 700px;
+    }
+    .impact__quote p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 600;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      line-height: 1.25;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--gold-2);
+    }
+    .impact__quote::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 64px;
+      margin: 0 auto 34px;
+      background: linear-gradient(180deg, transparent, var(--gold-2));
+    }
+    .impact__cta { text-align: center; }
+
+    /* ---------- Solução ---------- */
+    .solution__grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .solution__text p { margin-bottom: 20px; color: var(--ink-soft); }
+    .solution__text p strong { color: var(--ink); }
+    .solution__text .highlight {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.4;
+      border-left: 2px solid var(--gold-2);
+      padding-left: 24px;
+      margin: 32px 0;
+    }
+
+    .benefits {
+      background: var(--dark-2);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      position: sticky;
+      top: 110px;
+    }
+    .benefits h3 {
+      color: var(--cream);
+      font-size: 1.7rem;
+      margin-bottom: 30px;
+    }
+    .benefits ul { list-style: none; }
+    .benefits li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      color: var(--cream-soft);
+      border-bottom: 1px solid var(--dark-line);
+      font-size: .98rem;
+    }
+    .benefits li:last-child { border-bottom: none; }
+    .benefits li strong { color: var(--cream); font-weight: 600; }
+    .benefits__check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      margin-top: 3px;
+      color: var(--gold-2);
+    }
+
+    /* ---------- Método (timeline) ---------- */
+    .method { background: var(--paper-2); }
+    .steps {
+      max-width: 780px;
+      margin-top: 8px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 40px;
+      padding: 44px 0;
+      border-bottom: 1px solid var(--paper-line);
+    }
+    .step:last-child { border-bottom: none; }
+    .step__num {
+      font-family: var(--font-display);
+      font-size: 3.4rem;
+      font-weight: 500;
+      line-height: 1;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--gold-2);
+    }
+    .step__body h3 { font-size: 1.6rem; margin-bottom: 10px; }
+    .step__body p { color: var(--ink-soft); font-size: .99rem; max-width: 58ch; }
+    .method__cta { margin-top: 56px; }
+
+    /* ---------- FAQ ---------- */
+    .faq__list { max-width: 820px; margin-inline: auto; }
+    .faq__item {
+      border-bottom: 1px solid var(--paper-line);
+    }
+    .faq__item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px 4px;
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink);
+      transition: color .25s ease;
+    }
+    .faq__item summary::-webkit-details-marker { display: none; }
+    .faq__item summary:hover { color: var(--gold-1); }
+    .faq__marker {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--gold-2);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-1);
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      transition: transform .3s ease, background .3s ease, color .3s ease;
+    }
+    .faq__item[open] .faq__marker {
+      transform: rotate(45deg);
+      background: var(--gold-2);
+      color: #1B1611;
+    }
+    .faq__answer {
+      padding: 0 4px 32px;
+      color: var(--ink-soft);
+      max-width: 66ch;
+    }
+
+    /* ---------- Rodapé ---------- */
+    .footer {
+      background: var(--dark);
+      color: var(--cream-soft);
+      text-align: center;
+      padding: 90px 0 48px;
+      background-image: repeating-linear-gradient(90deg, rgba(201, 150, 75, .035) 0 1px, transparent 1px 72px);
+    }
+    .footer__brand img {
+      width: 150px;
+      height: auto;
+      margin: 0 auto 30px;
+    }
+    .footer__name {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+    .footer__role {
+      font-size: 12.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold-2);
+      margin: 12px 0 6px;
+    }
+    .footer__info {
+      font-size: .95rem;
+      margin-top: 4px;
+    }
+    .footer__divider {
+      width: 64px;
+      height: 1px;
+      background: var(--gold-2);
+      opacity: .5;
+      margin: 38px auto;
+    }
+    .footer__ethics {
+      font-size: 12.5px;
+      line-height: 1.8;
+      color: rgba(207, 199, 185, .55);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Botão flutuante WhatsApp ---------- */
+    .wa-float {
+      position: fixed;
+      right: 26px;
+      bottom: 26px;
+      z-index: 60;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--gold-grad);
+      display: grid;
+      place-items: center;
+      color: #1B1611;
+      box-shadow: 0 12px 30px rgba(140, 101, 36, .45);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .wa-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 16px 38px rgba(140, 101, 36, .55);
+    }
+
+    /* ---------- Reveal on scroll ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.is-in {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ---------- Responsivo ---------- */
+    @media (max-width: 920px) {
+      .section { padding: 78px 0; }
+      .cards { grid-template-columns: 1fr; gap: 20px; }
+      .impact__grid { grid-template-columns: 1fr; }
+      .impact__item { border-right: none !important; border-bottom: 1px solid var(--dark-line) !important; }
+      .impact__item:last-child { border-bottom: none !important; }
+      .solution__grid { grid-template-columns: 1fr; gap: 48px; }
+      .benefits { position: static; }
+      .step { grid-template-columns: 72px 1fr; gap: 24px; padding: 36px 0; }
+      .step__num { font-size: 2.6rem; }
+      .hero__rule { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .header__inner { height: 68px; }
+      .header__logo img { height: 32px; }
+      .header .btn--ghost { padding: 10px 16px; font-size: 12px; }
+
+      .hero { align-items: flex-end; }
+      .hero__media img { object-position: center 18%; }
+      .hero__media::after {
+        background:
+          linear-gradient(0deg, rgba(16, 13, 10, .97) 0%, rgba(16, 13, 10, .82) 34%, rgba(16, 13, 10, .18) 68%, rgba(16, 13, 10, .30) 100%);
+      }
+      .hero__content { padding: 62vh 0 72px; max-width: 100%; }
+      .hero__title { font-size: clamp(2rem, 8.6vw, 2.6rem); }
+      .hero__sub { font-size: 1rem; }
+      .btn { width: 100%; justify-content: center; }
+      .header .btn, .wa-float { width: auto; }
+
+      .card { padding: 34px 26px; }
+      .impact__item { padding: 36px 26px; }
+      .benefits { padding: 38px 28px; }
+      .faq__item summary { font-size: 1.22rem; }
+      .wa-float { right: 18px; bottom: 18px; width: 54px; height: 54px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="topo">
+    <div class="container header__inner">
+      <a href="#topo" class="header__logo" aria-label="Renata Farias — Advogada, início da página">
+        <img src="assets/logo-header.png" alt="Renata Farias — Advogada · Professora Universitária" width="1000" height="250">
+      </a>
+      <a class="btn btn--ghost" data-wa="header" href="https://wa.me/5527900000000" target="_blank" rel="noopener" aria-label="Falar com a equipe pelo WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.4-.2Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <div class="hero__media" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 640px)" srcset="assets/hero-mobile.jpg">
+        <img src="assets/hero-bg.jpg" alt="" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="hero__rule" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero__content">
+        <span class="eyebrow eyebrow--gold">Regularização de Imóveis · Vila Velha — ES</span>
+        <h1 class="hero__title">Seu imóvel está realmente protegido, ou você vai descobrir um problema <em>da pior forma?</em></h1>
+        <p class="hero__sub">Morar ou ter a posse de um imóvel há anos não garante a propriedade legal. Descubra como obter a escritura definitiva diretamente em cartório, de forma ágil, segura e sem a necessidade de um processo judicial demorado.</p>
+        <a class="btn btn--gold" data-wa="hero" href="https://wa.me/5527900000000" target="_blank" rel="noopener">
+          Quero Regularizar Meu Imóvel
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="hero__cta-note">Atendimento direto pelo WhatsApp · Análise individual do seu caso</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. DIAGNÓSTICO DO RISCO ============ -->
+  <section class="section" id="diagnostico">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section-index">01</span>
+        <div style="height:10px"></div>
+        <span class="eyebrow">Diagnóstico</span>
+        <h2 class="section-title">Você se reconhece em alguma <em>dessas situações?</em></h2>
+        <p class="section-lead">Muitas famílias acreditam que são donas de seus imóveis, mas, perante a lei, enfrentam uma situação de extrema vulnerabilidade jurídica. Veja se seu caso se encaixa aqui:</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card__num">I</span>
+          <h3 class="card__title">O Contrato de Gaveta</h3>
+          <p class="card__text">Você comprou o imóvel apenas com um contrato de compra e venda simples, mas a escritura nunca foi passada para o seu nome.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">II</span>
+          <h3 class="card__title">A Herança Antiga</h3>
+          <p class="card__text">O imóvel era dos seus pais ou avós, você mora nele há anos ou herdou a posse, mas a documentação continua no nome de quem já faleceu.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">III</span>
+          <h3 class="card__title">A Ausência de Registro</h3>
+          <p class="card__text">Você descobriu recentemente que o seu imóvel sequer possui matrícula ou registro oficial no Cartório de Registro de Imóveis da sua cidade.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">IV</span>
+          <h3 class="card__title">O Proprietário Antigo Sumiu</h3>
+          <p class="card__text">Você tem a posse há mais de uma década, mas perdeu o contato com o antigo dono ou ele desapareceu sem assinar a transferência definitiva.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. IMPACTO DA IRREGULARIDADE (escura) ============ -->
+  <section class="section impact" id="riscos">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section-index" style="color: var(--gold-2)">02</span>
+        <div style="height:10px"></div>
+        <span class="eyebrow eyebrow--gold">O impacto silencioso</span>
+        <h2 class="section-title">O que acontece se você <em>não regularizar</em> seu patrimônio?</h2>
+        <p class="section-lead">Adiar a regularização do seu imóvel não faz o problema desaparecer; na verdade, acumula riscos graves para você e seus herdeiros:</p>
+      </div>
+
+      <div class="impact__grid reveal">
+        <div class="impact__item">
+          <svg class="impact__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 30 L20 12 L34 30" /><path d="M12 30 l4 -6 M28 30 l-4 -6"/><path d="M4 34 h32"/><path d="M30 6 l-8 8 M30 14 l-8 -8" stroke-width="1.8"/></svg>
+          <h3>Desvalorização Imediata</h3>
+          <p>Um imóvel sem documentação regularizada perde até 40% do seu valor de mercado e afasta os melhores compradores.</p>
+        </div>
+        <div class="impact__item">
+          <svg class="impact__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="7" y="10" width="26" height="20" rx="2"/><path d="M7 16 h26"/><path d="M12 24 h8"/><circle cx="28" cy="24" r="2.4"/></svg>
+          <h3>Impossibilidade de Financiamento</h3>
+          <p>Se você precisar vender, os bancos não liberam crédito imobiliário para propriedades sem matrícula e escritura regularizadas.</p>
+        </div>
+        <div class="impact__item">
+          <svg class="impact__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 5 v30 M20 10 h-11 l-3 6 a6 6 0 0 0 12 0 l-3 -6 M20 10 h11 l3 6 a6 6 0 0 1 -12 0 l3 -6"/><path d="M13 35 h14"/></svg>
+          <h3>O Pesadelo do Inventário</h3>
+          <p>Caso você venha a faltar, seus filhos não conseguirão partilhar o patrimônio de forma simples. A falta de regularização trava inventários e gera disputas familiares desgastantes.</p>
+        </div>
+        <div class="impact__item">
+          <svg class="impact__icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 5 l13 5 v9 c0 8 -6 13 -13 16 c-7 -3 -13 -8 -13 -16 v-9 Z"/><path d="M14 20 l4 4 l8 -8"/></svg>
+          <h3>Vulnerabilidade Jurídica Total</h3>
+          <p>Sem o registro no seu nome, o imóvel ainda pode responder legalmente por dívidas, penhoras ou processos do proprietário anterior.</p>
+        </div>
+      </div>
+
+      <div class="impact__quote reveal">
+        <p>“Quem não registra,<br>não é dono.”</p>
+      </div>
+
+      <div class="impact__cta reveal">
+        <a class="btn btn--gold" data-wa="impacto" href="https://wa.me/5527900000000" target="_blank" rel="noopener">
+          Quero Proteger Meu Patrimônio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. A SOLUÇÃO ============ -->
+  <section class="section" id="solucao">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section-index">03</span>
+        <div style="height:10px"></div>
+        <span class="eyebrow">A solução legal e ágil</span>
+        <h2 class="section-title">Conheça a Usucapião <em>Extrajudicial</em></h2>
+      </div>
+
+      <div class="solution__grid">
+        <div class="solution__text reveal">
+          <p>Existe um caminho legal que permite regularizar a sua situação <strong>diretamente no Cartório de Registro de Imóveis</strong>, sem a necessidade de abrir um processo judicial demorado que pode levar anos na Justiça.</p>
+          <p class="highlight">A Usucapião Extrajudicial é uma modalidade criada justamente para quem exerce a posse de um imóvel há muitos anos e cuida dele como se fosse seu.</p>
+          <p>Se a sua posse é <strong>contínua e pacífica</strong> e você deseja obter a propriedade definitiva com muito mais rapidez, essa modalidade foi desenhada para o seu caso — com previsibilidade, segurança e acompanhamento técnico em todas as etapas.</p>
+        </div>
+        <aside class="benefits reveal" aria-label="O que você ganha ao regularizar">
+          <h3>O que você ganha ao regularizar:</h3>
+          <ul>
+            <li>
+              <svg class="benefits__check" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.5 l3 3 l6 -6.5"/></svg>
+              <span><strong>Segurança jurídica absoluta</strong> para sua moradia.</span>
+            </li>
+            <li>
+              <svg class="benefits__check" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.5 l3 3 l6 -6.5"/></svg>
+              <span><strong>Valorização real do seu patrimônio</strong> frente ao mercado.</span>
+            </li>
+            <li>
+              <svg class="benefits__check" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.5 l3 3 l6 -6.5"/></svg>
+              <span><strong>Liberdade total</strong> para vender, transferir ou financiar o bem.</span>
+            </li>
+            <li>
+              <svg class="benefits__check" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.5 l3 3 l6 -6.5"/></svg>
+              <span><strong>Tranquilidade para o futuro</strong> e sucessão dos seus filhos.</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. MÉTODO ============ -->
+  <section class="section method" id="metodo">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section-index">04</span>
+        <div style="height:10px"></div>
+        <span class="eyebrow">Como funciona o nosso suporte jurídico</span>
+        <h2 class="section-title">Atuação especializada, <em>passo a passo</em></h2>
+        <p class="section-lead">Nosso escritório atua de forma humanizada e estritamente estratégica, conduzindo todo o procedimento administrativo para que você não tenha dores de cabeça. Nosso método consiste em:</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__num">01</span>
+          <div class="step__body">
+            <h3>Análise Jurídica de Viabilidade</h3>
+            <p>Analisamos profundamente a história do seu imóvel para identificar se ele cumpre todos os requisitos exigidos pela lei para a regularização extrajudicial.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">02</span>
+          <div class="step__body">
+            <h3>Definição da Estratégia Adequada</h3>
+            <p>Caso a Usucapião Extrajudicial não seja o único caminho, desenhamos a estratégia jurídica mais rápida e menos onerosa para o seu caso específico.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">03</span>
+          <div class="step__body">
+            <h3>Organização e Saneamento Documental</h3>
+            <p>Auxiliamos você na busca, organização e conferência de certidões, plantas, históricos e comprovantes necessários para apresentar ao Cartório.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">04</span>
+          <div class="step__body">
+            <h3>Acompanhamento e Conclusão</h3>
+            <p>Protocolamos e conduzimos todas as etapas burocráticas diretamente junto aos tabelionatos e registros de imóveis, mantendo você informado em cada evolução.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="method__cta reveal">
+        <a class="btn btn--gold" data-wa="metodo" href="https://wa.me/5527900000000" target="_blank" rel="noopener">
+          Verificar a Situação do Meu Imóvel
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. FAQ ============ -->
+  <section class="section" id="duvidas">
+    <div class="container">
+      <div class="section__head reveal" style="text-align:center">
+        <span class="eyebrow eyebrow--center">Esclarecendo dúvidas frequentes</span>
+        <h2 class="section-title" style="margin-inline:auto">Perguntas <em>frequentes</em></h2>
+      </div>
+
+      <div class="faq__list reveal">
+        <details class="faq__item">
+          <summary>
+            “Regularizar um imóvel custa muito caro?”
+            <span class="faq__marker" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq__answer">O custo de manter um imóvel irregular é sempre maior, considerando a perda de valor de mercado (até 40%) e o risco de multas ou perda do bem. A análise jurídica serve justamente para encontrar o caminho mais econômico e evitar gastos desnecessários com processos errados.</p>
+        </details>
+        <details class="faq__item">
+          <summary>
+            “Esse procedimento vai demorar anos?”
+            <span class="faq__marker" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq__answer">Diferente da via judicial tradicional, que costuma se arrastar nos tribunais, a Usucapião Extrajudicial é realizada diretamente em Cartório. Isso reduz drasticamente o tempo de tramitação, permitindo uma resolução muito mais ágil e previsível.</p>
+        </details>
+        <details class="faq__item">
+          <summary>
+            “Perdi meus documentos antigos ou não tenho escritura. Ainda posso resolver?”
+            <span class="faq__marker" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq__answer">Sim. A falta de escritura ou a perda de recibos antigos são os motivos mais comuns que levam à necessidade da Usucapião. Através de uma análise técnica, conseguimos mapear provas alternativas (como contas de consumo, testemunhas e impostos pagos) que comprovam o seu direito à regularização.</p>
+        </details>
+        <details class="faq__item">
+          <summary>
+            “O antigo dono do imóvel sumiu ou faleceu. O que eu faço?”
+            <span class="faq__marker" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq__answer">A Usucapião Extrajudicial foi desenhada por lei exatamente para resolver esses cenários. Não dependemos da assinatura ou da presença do antigo proprietário se preenchidos os requisitos de tempo e posse pacífica determinados pela legislação.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. RODAPÉ INSTITUCIONAL ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand reveal">
+        <img src="assets/submarca.png" alt="Submarca Renata Farias — monograma R" loading="lazy" width="760" height="793">
+        <p class="footer__name">Dra. Renata Farias</p>
+        <p class="footer__role">Advocacia Especializada em Direito Imobiliário<br>e Regularização Patrimonial</p>
+        <!-- TROCAR: número da OAB/ES antes de publicar -->
+        <p class="footer__info">OAB/ES nº 00.000</p>
+        <p class="footer__info">Praia da Costa, Vila Velha — ES</p>
+      </div>
+      <div class="footer__divider" aria-hidden="true"></div>
+      <p class="footer__ethics"><strong>Nota de Conformidade Ética:</strong> Este canal possui caráter estritamente informativo e educativo, em estrita observância ao Provimento nº 205/2021 do Conselho Federal da OAB e ao Código de Ética e Disciplina da Advocacia. Não realizamos promessas de resultados garantidos, visto que a atividade advocatícia é de meio e depende da análise de cada caso concreto pelas autoridades competentes.</p>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP FLUTUANTE ============ -->
+  <a class="wa-float" data-wa="flutuante" href="https://wa.me/5527900000000" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.4-.2Z"/></svg>
+  </a>
+
+  <script>
+    /* ============================================================
+       TROCAR: número do WhatsApp (formato: 55 + DDD + número).
+       Trocando a constante abaixo, TODOS os botões da página
+       passam a usar o número novo automaticamente.
+       ============================================================ */
+    const WHATSAPP_NUMBER = '5527900000000';
+
+    const WA_MESSAGES = {
+      header:    'Olá! Vim pela página da Dra. Renata Farias e gostaria de uma análise do meu caso.',
+      hero:      'Olá! Vim pela página da Dra. Renata Farias e quero regularizar meu imóvel.',
+      impacto:   'Olá! Quero proteger meu patrimônio e regularizar a documentação do meu imóvel.',
+      metodo:    'Olá! Gostaria de verificar a situação do meu imóvel com a equipe da Dra. Renata Farias.',
+      flutuante: 'Olá! Vim pela página da Dra. Renata Farias e gostaria de tirar uma dúvida.'
+    };
+
+    document.querySelectorAll('[data-wa]').forEach(a => {
+      const msg = WA_MESSAGES[a.dataset.wa] || WA_MESSAGES.flutuante;
+      a.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    });
+
+    /* Header ganha fundo ao rolar */
+    const header = document.querySelector('.header');
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Reveal on scroll */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
